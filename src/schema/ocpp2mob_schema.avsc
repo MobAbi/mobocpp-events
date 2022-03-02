@@ -2,10 +2,29 @@
   {
     "namespace": "ch.mobility.ocpp2mob",
     "type": "record",
+    "name": "MobOCPPStartupNotification",
+    "fields": [
+      {"name": "OCPPBackendId", "type": "string"},
+      {"name": "NotificationCreatedAt", "type": "string"}
+    ]
+  },
+  {
+    "namespace": "ch.mobility.ocpp2mob",
+    "type": "record",
+    "name": "MobOCPPShutdownNotification",
+    "fields": [
+      {"name": "OCPPBackendId", "type": "string"},
+      {"name": "NotificationCreatedAt", "type": "string"},
+      {"name": "ShutdownReason", "type": ["null", "string"], "default": null}
+    ]
+  },
+  {
+    "namespace": "ch.mobility.ocpp2mob",
+    "type": "record",
     "name": "CSResponse",
     "fields": [
       {"name": "MessageId", "type": "string"},
-      {"name": "ResponseCreatedAt", "type": "string"},  // TODO TIMESTAMP
+      {"name": "ResponseCreatedAt", "type": "string"},
       {"name": "OCPPBackendId", "type": "string"},
       {"name": "Error",  "type": ["null", "string"], "default": null}
     ]
@@ -50,7 +69,7 @@
     "type": "record",
     "name": "CPStatusHistoryEntry",
     "fields": [
-      {"name": "Timestamp", "type": "string"}, // TODO TIMESTAMP
+      {"name": "Timestamp", "type": "string"},
       {"name": "ConnectorStatus", "type": "ConnectorStatusEnum"},
       {"name": "ChargingState", "type": ["null", "ChargingStateEnum"], "default": null},
       {"name": "ErrorCode", "type": ["null", "string"], "default": null},
@@ -62,8 +81,8 @@
     "type": "record",
     "name": "CPTransactionHistoryEntry",
     "fields": [
-      {"name": "StartTimestamp", "type": "string"}, // TODO TIMESTAMP
-      {"name": "StopTimestamp", "type": ["null", "string"], "default": null}, // TODO TIMESTAMP
+      {"name": "StartTimestamp", "type": "string"},
+      {"name": "StopTimestamp", "type": ["null", "string"], "default": null},
       {"name": "StartValue", "type": "int"},
       {"name": "StopValue", "type": ["null", "int"], "default": null}
     ]
@@ -111,8 +130,9 @@
       {"name": "Model", "type": ["null", "string"], "default": null},
       {"name": "Firmwareversion", "type": ["null", "string"], "default": null},
       {"name": "OCPPVersion", "type": ["null", "string"], "default": null},
-      {"name": "FirstContact", "type": ["null", "string"], "default": null}, // TODO TIMESTAMP
-      {"name": "LastContact", "type": ["null", "string"], "default": null}, // TODO TIMESTAMP
+      {"name": "FirstContact", "type": ["null", "string"], "default": null},
+      {"name": "LastContact", "type": ["null", "string"], "default": null},
+      {"name": "IPAddress", "type": ["null", "string"], "default": null},
       {"name":"CPStatusList",
         "type":{
           "type": "array",
@@ -141,10 +161,11 @@
     "name": "CSStatusConnected",
     "fields": [
       {"name": "Id", "type": "string"},
-      {"name": "CPStatus", "type": "string"},
+      {"name": "CPConnectorStatus", "type": "string"},
+      {"name": "CPChargingState", "type": "string"},
       {"name": "Vendor",  "type": ["null", "string"], "default": null},
       {"name": "Model", "type": ["null", "string"], "default": null},
-      {"name": "LastContact", "type": ["null", "string"], "default": null} // TODO TIMESTAMP
+      {"name": "LastContact", "type": ["null", "string"], "default": null}
     ]
   },
   {

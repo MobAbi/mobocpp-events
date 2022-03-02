@@ -5,7 +5,7 @@
     "name": "CSRequest",
     "fields": [
       {"name": "MessageId", "type": "string"},
-      {"name": "RequestCreatedAt", "type": "string"}  // TODO TIMESTAMP
+      {"name": "RequestCreatedAt", "type": "string"}
     ]
   },
   {
