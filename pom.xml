@@ -4,7 +4,7 @@
 
     <groupId>ch.mobility</groupId>
     <artifactId>mobocpp-events</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 
     <name>mobocpp-events</name>
 
@@ -85,6 +85,7 @@
                     <goal>schema</goal>
                   </goals>
                   <configuration>
+                    <stringType>String</stringType>
                     <sourceDirectory>${project.basedir}/src/schema/</sourceDirectory>
                     <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                   </configuration>
