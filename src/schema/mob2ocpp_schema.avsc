@@ -82,7 +82,8 @@
       {"name": "RequestInfo", "type": "CSRequest" },
       {"name": "Id", "type": "string"},
       {"name": "ConnectorId", "type": "int"},
-      {"name": "MaxCurrent", "type": "int"}
+      {"name": "MaxCurrent", "type": "int"},
+      {"name": "NumberOfPhases", "type": ["null", "int"], "default": null}
     ]
   },
   {
