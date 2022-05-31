@@ -4,7 +4,7 @@
 
     <groupId>ch.mobility</groupId>
     <artifactId>mobocpp-events</artifactId>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
 
     <name>mobocpp-events</name>
 

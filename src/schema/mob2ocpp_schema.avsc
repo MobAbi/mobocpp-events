@@ -61,7 +61,8 @@
       {"name": "Id", "type": "string"},
       {"name": "ConnectorId", "type": "int"},
       {"name": "TagId", "type": ["null", "string"], "default": null},
-      {"name": "MaxCurrent", "type": ["null", "int"], "default": null}
+      {"name": "MaxCurrent", "type": ["null", "int"], "default": null},
+      {"name": "NumberOfPhases", "type": ["null", "int"], "default": null}
     ]
   },
   {
