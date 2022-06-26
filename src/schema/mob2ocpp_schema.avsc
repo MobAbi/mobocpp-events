@@ -36,6 +36,15 @@
   {
     "namespace": "ch.mobility.mob2ocpp",
     "type": "record",
+    "name": "CSRecentlyConnectedRequest",
+    "fields": [
+      {"name": "RequestInfo", "type": "CSRequest" },
+      {"name": "DaysOfHistoryData", "type": ["null", "int"], "default": null}
+    ]
+  },
+  {
+    "namespace": "ch.mobility.mob2ocpp",
+    "type": "record",
     "name": "CSResetRequest",
     "fields": [
       {"name": "RequestInfo", "type": "CSRequest" },

@@ -190,6 +190,36 @@
   {
     "namespace": "ch.mobility.ocpp2mob",
     "type": "record",
+    "name": "CSRecentlyConnected",
+    "fields": [
+      {"name": "Id", "type": "string"},
+      {"name": "CPConnectorStatus", "type": "string"},
+      {"name": "CPChargingState", "type": "string"},
+      {"name": "Vendor",  "type": ["null", "string"], "default": null},
+      {"name": "Model", "type": ["null", "string"], "default": null},
+      {"name": "LastContact", "type": ["null", "string"], "default": null}
+    ]
+  },
+  {
+    "namespace": "ch.mobility.ocpp2mob",
+    "type": "record",
+    "name": "CSRecentlyConnectedResponse",
+    "fields":[
+      {"name": "ResponseInfo", "type": "CSResponse" },
+      {"name":"CSRecentlyList",
+        "type":{
+          "type": "array",
+          "items":{
+            "name":"Status",
+            "type":"CSRecentlyConnected"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "namespace": "ch.mobility.ocpp2mob",
+    "type": "record",
     "name": "CSResetResponse",
     "fields": [
       {"name": "ResponseInfo", "type": "CSResponse" },
