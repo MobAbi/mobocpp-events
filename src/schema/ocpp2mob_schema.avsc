@@ -193,8 +193,6 @@
     "name": "CSRecentlyConnected",
     "fields": [
       {"name": "Id", "type": "string"},
-      {"name": "CPConnectorStatus", "type": "string"},
-      {"name": "CPChargingState", "type": "string"},
       {"name": "Vendor",  "type": ["null", "string"], "default": null},
       {"name": "Model", "type": ["null", "string"], "default": null},
       {"name": "LastContact", "type": ["null", "string"], "default": null}
