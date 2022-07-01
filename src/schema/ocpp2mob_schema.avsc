@@ -160,11 +160,29 @@
   {
     "namespace": "ch.mobility.ocpp2mob",
     "type": "record",
+    "name": "CSStatusConnectedConnector",
+    "fields": [
+      {"name": "ConnectorId", "type": "int"},
+      {"name": "ConnectorStatus", "type": ["null", "ConnectorStatusEnum"], "default": null},
+      {"name": "ChargingState", "type": ["null", "ChargingStateEnum"], "default": null},
+      {"name": "StartActiveTransaction", "type": ["null", "string"], "default": null}
+    ]
+  },
+  {
+    "namespace": "ch.mobility.ocpp2mob",
+    "type": "record",
     "name": "CSStatusConnected",
     "fields": [
       {"name": "Id", "type": "string"},
-      {"name": "CPConnectorStatus", "type": "string"},
-      {"name": "CPChargingState", "type": "string"},
+      {"name":"CSStatusConnectorList",
+        "type":{
+          "type": "array",
+          "items":{
+            "name":"StatusConnectedConnector",
+            "type":"CSStatusConnectedConnector"
+          }
+        }
+      },
       {"name": "Vendor",  "type": ["null", "string"], "default": null},
       {"name": "Model", "type": ["null", "string"], "default": null},
       {"name": "LastContact", "type": ["null", "string"], "default": null}
