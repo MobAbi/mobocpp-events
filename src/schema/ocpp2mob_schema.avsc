@@ -160,12 +160,24 @@
   {
     "namespace": "ch.mobility.ocpp2mob",
     "type": "record",
+    "name": "CSStatusConnectedConnectorActiveTransaction",
+    "fields": [
+      {"name": "StartActiveTransaction", "type": "string"},
+      {"name": "ChargingcablePluginAt", "type": "string"},
+      {"name": "CurrentChargingAmpereL1", "type": "int"},
+      {"name": "CurrentChargingAmpereL2", "type": "int"},
+      {"name": "CurrentChargingAmpereL3", "type": "int"}
+    ]
+  },
+  {
+    "namespace": "ch.mobility.ocpp2mob",
+    "type": "record",
     "name": "CSStatusConnectedConnector",
     "fields": [
       {"name": "ConnectorId", "type": "int"},
       {"name": "ConnectorStatus", "type": ["null", "ConnectorStatusEnum"], "default": null},
       {"name": "ChargingState", "type": ["null", "ChargingStateEnum"], "default": null},
-      {"name": "StartActiveTransaction", "type": ["null", "string"], "default": null}
+      {"name": "ActiveTransaction", "type": ["null", "CSStatusConnectedConnectorActiveTransaction"], "default": null}
     ]
   },
   {

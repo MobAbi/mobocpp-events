@@ -30,7 +30,8 @@
     "type": "record",
     "name": "CSStatusConnectedRequest",
     "fields": [
-      {"name": "RequestInfo", "type": "CSRequest" }
+      {"name": "RequestInfo", "type": "CSRequest" },
+      {"name": "FetchActiveTransactionData", "type": "boolean", "default": false}
     ]
   },
   {
